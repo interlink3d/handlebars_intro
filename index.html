@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Handlebars Intro</title>
+  <link rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+  <header style="color: blue; "><h1>Handlebars Intro</h1></header>
+
+    <div id="entryOutput"></div>
+
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="entry">
+        <h1>{{title}}</h1>
+        <div class="body">
+          {{body}}
+        </div>
+        <ul>
+          {{#each tags}}
+            <li> {{inc @index}}. {{category}} : {{name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      {{> tagline }}
+    </script>
+
+    <script id="tagline-partial" type="text/x-handlebars-template">
+      <div class="tagline">
+        <h4>Authored by {{author_last_name}}, {{author_first_name}} </h4>
+        <div class="date">{{authored_date}}</div>
+
+      </div>
+    </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script src="main.js" type="text/javascript"></script>
+</body>
+</html>
